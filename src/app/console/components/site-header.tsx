@@ -3,11 +3,9 @@
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { NavUser } from "./nav-user"
-import axios from '@/lib/axiosLocalInstance';
 import { useEffect, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import axiosInstance, { setTriggerEndpoints } from "@/lib/axiosInstance";
-import { SidebarData } from "../layout.interface";
 
 interface User {
   email: string;
@@ -33,7 +31,7 @@ export function SiteHeader({title}: {
   const router = useRouter();
 
   const fetchProfile = () => {
-    axios.get('/v1/profile')
+    axiosInstance.get('/v1/profile')
       .then(response => {
         setUser(response.data.data)
       })
