@@ -27,7 +27,7 @@ export default function KtpOcrPage() {
 
   
   const readableData = result || {};
-  const curlCommand = `curl --location 'http://localhost:3002/v1/ktp/ocr?apiKey=YOUR_API_KEY' \\
+  const curlCommand = `curl --location 'https://heylabs/api/v1/ktp/ocr?apiKey=YOUR_API_KEY' \\
 --form 'image=@"/path/to/ktp.jpg"'`;
 
 
@@ -64,7 +64,7 @@ export default function KtpOcrPage() {
 
   const handleEndpointDetail = async() => {
     const data = {
-      path: "/v1/ktp/ocr"
+      path: "/api/v1/ktp/ocr"
     }
 
     axiosInstance.post('/v1/endpoint/detail', data)
@@ -245,7 +245,7 @@ export default function KtpOcrPage() {
                   <div>
                     <p className="font-medium mb-2">📍 Endpoint:</p>
                     <code className="block bg-muted p-2 rounded-md text-sm">
-                      POST /v1/ktp/ocr?apiKey=YOUR_API_KEY
+                      POST /api/v1/ktp/ocr?apiKey=YOUR_API_KEY
                     </code>
                   </div>
 
@@ -308,8 +308,7 @@ export default function KtpOcrPage() {
       "status_perkawinan": "BELUM KAWIN",
       "pekerjaan": "BELUM/TIDAK BEKERJA",
       "kewarganegaraan": "WNI"
-  }
-                      }`}
+  }`}
                     />
                   </div>
                 </CardContent>
