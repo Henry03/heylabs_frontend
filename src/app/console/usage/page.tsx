@@ -216,13 +216,13 @@ export default function Usage () {
                         {
                             loading ? (
                                 <TableRow>
-                                    <TableCell colSpan={5} className="text-center py-6">
+                                    <TableCell colSpan={8} className="text-center py-6">
                                     Loading...
                                     </TableCell>
                                 </TableRow>
                             ): usage.length === 0 ? (
                                 <TableRow>
-                                    <TableCell colSpan={5} className="text-center py-6 text-muted-foreground">
+                                    <TableCell colSpan={8} className="text-center py-6 text-muted-foreground">
                                     No API keys found.
                                     </TableCell>
                                 </TableRow>

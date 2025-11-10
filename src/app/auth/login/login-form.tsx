@@ -35,7 +35,7 @@ export default function LoginForm() {
                 return res.data.message
             },
             error: (err) => {
-                console.log(err.response.data.errors)
+                console.log(err.response.data)
                 setErrors(err.response.data.errors)
                 return err.response.data.message
             }
